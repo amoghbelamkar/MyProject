@@ -16,5 +16,46 @@
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>rpm-maven-plugin</artifactId>
+                <version>2.0.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>rpm</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <copyright>2019, UnixUtils</copyright>
+                    <group>Development/Tools</group>
+                    <release>1.0.0</release>
+                    <mappings>
+                        <mapping>
+                            <directory>/opt/module2-1.0-SNAPSHOT.jar</directory>
+                            <username>myuser</username>
+                            <groupname>mygroup</groupname>
+                            <filemode>755</filemode>
+                            <sources>
+                                <source>
+                                    <location>${project.basedir}/target/module2-1.0-SNAPSHOT.jar</location>
+                                </source>
+                            </sources>
+                        </mapping>
+                    </mappings>
+                    <preinstallScriptlet>
+                        <scriptFile>${project.basedir}/scripts/preinstall.sh</scriptFile>
+                    </preinstallScriptlet>
+                    <postinstallScriptlet>
+                        <scriptFile>${project.basedir}/scripts/postinstall.sh</scriptFile>
+                        <fileEncoding>utf-8</fileEncoding>
+                    </postinstallScriptlet>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
