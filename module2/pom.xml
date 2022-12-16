@@ -9,6 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+
     <artifactId>module2</artifactId>
 
     <properties>
@@ -19,32 +20,33 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>rpm-maven-plugin</artifactId>
-                <version>2.0.1</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>rpm</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <copyright>2019, UnixUtils</copyright>
-                    <group>Development/Tools</group>
-                    <release>1.0.0</release>
-                    <mappings>
-                        <mapping>
-                            <directory>/opt/module2-1.0-SNAPSHOT.jar</directory>
-                            <username>myuser</username>
-                            <groupname>mygroup</groupname>
-                            <filemode>755</filemode>
-                            <sources>
-                                <source>
-                                    <location>${project.basedir}/target/module2-1.0-SNAPSHOT.jar</location>
-                                </source>
-                            </sources>
-                        </mapping>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>rpm-maven-plugin</artifactId>
+            <version>2.2.0</version>
+            <executions>
+            <execution>
+            <id>jre5-attached</id>
+            <goals>
+                <goal>rpm</goal>
+            </goals>
+            </execution>
+            </executions>
+            <configuration>
+                <group>Development/Tools</group>
+            <mappings>
+
+            <mapping>
+                <directory>/opt/module2-1.0-SNAPSHOT.jar</directory>
+                <username>myuser</username>
+                <filemode>755</filemode>
+                <sources>
+                    <source>
+                        <location>${project.basedir}/target/module2-1.0-SNAPSHOT.jar</location>
+
+                    </source>
+                </sources>
+            </mapping>
+
                     </mappings>
                     <preinstallScriptlet>
                         <scriptFile>${project.basedir}/scripts/preinstall.sh</scriptFile>
@@ -53,7 +55,8 @@
                         <scriptFile>${project.basedir}/scripts/postinstall.sh</scriptFile>
                         <fileEncoding>utf-8</fileEncoding>
                     </postinstallScriptlet>
-                </configuration>
+                <group/>
+            </configuration>
             </plugin>
         </plugins>
     </build>
