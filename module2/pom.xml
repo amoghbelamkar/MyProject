@@ -17,23 +17,27 @@
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
     <build>
         <plugins>
             <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>rpm-maven-plugin</artifactId>
-            <version>2.2.0</version>
+            <version>2.0.1</version>
             <executions>
             <execution>
-            <id>jre5-attached</id>
+
             <goals>
                 <goal>rpm</goal>
             </goals>
             </execution>
             </executions>
             <configuration>
+                <copyright>2019, UnixUtils</copyright>
                 <group>Development/Tools</group>
-            <mappings>
+                <release>1.0.0</release>
+
+                <mappings>
 
             <mapping>
                 <directory>/opt/oneconnect/module2-1.0-SNAPSHOT.jar</directory>
@@ -55,7 +59,7 @@
                         <scriptFile>${project.basedir}/scripts/postinstall.sh</scriptFile>
                         <fileEncoding>utf-8</fileEncoding>
                     </postinstallScriptlet>
-                <group/>
+
             </configuration>
             </plugin>
         </plugins>

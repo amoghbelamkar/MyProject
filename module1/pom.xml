@@ -33,17 +33,20 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>rpm-maven-plugin</artifactId>
-                <version>2.2.0</version>
+                <version>2.0.1</version>
                 <executions>
                     <execution>
-                        <id>jre5-attached</id>
+
                         <goals>
                             <goal>rpm</goal>
                         </goals>
                     </execution>
                 </executions>
                 <configuration>
+                    <copyright>2019, UnixUtils</copyright>
                     <group>Development/Tools</group>
+                    <release>1.0.0</release>
+
                     <mappings>
 
                         <mapping>
@@ -65,8 +68,7 @@
                     <postinstallScriptlet>
                         <scriptFile>${project.basedir}/scripts/postinstall.sh</scriptFile>
                         <fileEncoding>utf-8</fileEncoding>
-                    </postinstallScriptlet>
-                    <group/>
+                    </postinstallScriptlet><group/>
                 </configuration>
             </plugin>
         </plugins>
