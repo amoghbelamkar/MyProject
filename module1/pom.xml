@@ -68,7 +68,7 @@
                     <postinstallScriptlet>
                         <scriptFile>${project.basedir}/scripts/postinstall.sh</scriptFile>
                         <fileEncoding>utf-8</fileEncoding>
-                    </postinstallScriptlet><group/>
+                    </postinstallScriptlet>
                 </configuration>
             </plugin>
         </plugins>
