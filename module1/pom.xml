@@ -47,7 +47,7 @@
                     <mappings>
 
                         <mapping>
-                            <directory>/opt/module1-1.0-SNAPSHOT.jar</directory>
+                            <directory>/opt/oneconnect/module1-1.0-SNAPSHOT.jar</directory>
                             <username>myuser</username>
                             <filemode>755</filemode>
                             <sources>

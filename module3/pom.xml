@@ -49,7 +49,7 @@
                     <mappings>
 
                         <mapping>
-                            <directory>/opt/module3-1.0-SNAPSHOT.jar</directory>
+                            <directory>/opt/oneconnect/module3-1.0-SNAPSHOT.jar</directory>
                             <username>myuser</username>
                             <filemode>755</filemode>
                             <sources>
